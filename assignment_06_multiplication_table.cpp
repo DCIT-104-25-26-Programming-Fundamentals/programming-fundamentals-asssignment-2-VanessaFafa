@@ -57,3 +57,83 @@
 #include <iostream>
 using namespace std;
 
+#include <iostream>
+using namespace std;
+
+// Function prototypes
+void printTable(int number);
+void printTablesUpToN(int n);
+
+
+int main()
+{
+    int number;
+
+    // Part A - Single Table
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (number <= 0)
+    {
+        cout << "Error: Number must be positive." << endl;
+        return 0;
+    }
+
+    cout << "\nMultiplication Table for " << number << ":\n";
+    printTable(number);
+
+
+
+    // Part B - Tables from 1 to N
+    int n;
+
+    cout << "\nEnter N for tables from 1 to N: ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Error: N must be positive." << endl;
+        return 0;
+    }
+
+    printTablesUpToN(n);
+
+
+    return 0;
+}
+
+
+
+// PART A Function
+// Prints one multiplication table
+void printTable(int number)
+{
+    for (int i = 1; i <= 12; i++)
+    {
+        cout << number << "  x  "
+             << i << "  =  "
+             << number * i << endl;
+    }
+}
+
+
+
+// PART B Function
+// Prints multiplication tables from 1 to N
+void printTablesUpToN(int n)
+{
+    for (int number = 1; number <= n; number++)
+    {
+        cout << "\nMultiplication Table for "
+             << number << ":\n";
+
+        for (int i = 1; i <= 12; i++)
+        {
+            cout << number << "  x  "
+                 << i << "  =  "
+                 << number * i << endl;
+        }
+
+        cout << "---------------------------" << endl;
+    }
+}
